@@ -47,11 +47,12 @@
     </script>
     <script>
 
-        $('#learn-more').click( function() {
-            alert( 'Learn more about what?');
+        $('#learn-more').click(function () {
+            alert('Learn more about what?');
         });
 
     </script>
+
 </head>
 <body>
 
@@ -63,6 +64,27 @@
 <button id="change-name" onclick="myFunction()">Try it</button>
 
 <button id="learn-more" class="btn btn-success btn-lg" type="button">Learn More</button>
+
+<div>
+    <input type="textfield" id="simple-comment"/>
+    <button id="simple-send">Post Comment</button>
+
+</div>
+
+<div class="col-md-8 col-md-offset-2">
+    <h2>Simple Comments</h2>
+    <div id="simple-comments">
+        <ul>
+        </ul>
+    </div>
+</div>
+
+<script>
+    $("#simple-send").on("click", function(e) {
+        $("#simple-comments ul").append("<li>" + $("#simple-comment").val() + "</li>");
+        $("#simple-comment").val("");
+    });
+</script>
 
 </body>
 </html>
